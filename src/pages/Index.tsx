@@ -257,7 +257,7 @@ export default function Index() {
                 <motion.a key={b.title} href="#"
                   initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.4 }}
                   whileHover={{ y: -3 }} className="relative rounded-xl overflow-hidden cursor-pointer block bg-black" style={{ aspectRatio: "2/1" }}>
-                  <img src={b.img} alt={b.title} className="w-full h-full object-cover opacity-40 grayscale" />
+                  <img src={b.img} alt={b.title} className="w-full h-full object-cover opacity-40" />
                   <div className="absolute inset-0 p-5 flex flex-col justify-between">
                     <b.icon className="w-5 h-5 text-white/60" />
                     <div>
@@ -316,7 +316,7 @@ export default function Index() {
               <motion.a key={p.name} variants={fadeUp} href="#"
                 whileHover={{ y: -4 }} className="bg-white border border-black/8 rounded-xl overflow-hidden hover:shadow-xl hover:border-black/15 transition-all cursor-pointer group block">
                 <div className="relative overflow-hidden bg-[#F2F2F2]" style={{ aspectRatio: "1/1" }}>
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
+                  <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   <span className="absolute top-2.5 left-2.5 text-white text-[10px] font-black px-2.5 py-1 rounded-full tracking-wide"
                     style={{ background: p.isOffer ? PINK : "black" }}>{p.tag}</span>
                   <button className="absolute top-2.5 right-2.5 w-7 h-7 bg-white rounded-full shadow flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
