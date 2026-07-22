@@ -153,21 +153,21 @@ export default function Index() {
 
       {/* COLORED BAR: categories + search */}
       <div style={{ background: BLUE }}>
-        <div className="max-w-7xl mx-auto px-6 flex items-stretch">
+        <div className="max-w-7xl mx-auto px-3 md:px-6 flex items-stretch">
           <div className="relative shrink-0">
             <button onClick={() => setCatOpen(!catOpen)}
-              className="flex items-center gap-3 px-5 py-4 h-full cursor-pointer transition-colors"
-              style={{ background: catOpen ? "rgba(0,0,0,0.18)" : PINK, minWidth: 220 }}>
-              <div className="flex flex-col gap-[3px]">
+              className="flex items-center gap-2 md:gap-3 px-3 md:px-5 py-3 md:py-4 h-full min-w-0 md:min-w-[220px] cursor-pointer transition-colors"
+              style={{ background: catOpen ? "rgba(0,0,0,0.18)" : PINK }}>
+              <div className="flex flex-col gap-[3px] shrink-0">
                 <span className="block w-4 h-[2px] bg-white rounded" />
                 <span className="block w-4 h-[2px] bg-white rounded" />
                 <span className="block w-4 h-[2px] bg-white rounded" />
               </div>
               <div className="text-left">
-                <p className="text-white font-black text-sm tracking-wide">Categorías</p>
-                <p className="text-white/70 text-[11px] font-normal">Navegue entre más de 20.000 productos</p>
+                <p className="text-white font-black text-sm tracking-wide whitespace-nowrap">Categorías</p>
+                <p className="text-white/70 text-[11px] font-normal hidden md:block">Navegue entre más de 20.000 productos</p>
               </div>
-              <ChevronDown className={`w-4 h-4 text-white/70 ml-auto transition-transform duration-200 ${catOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`hidden md:block w-4 h-4 text-white/70 ml-auto transition-transform duration-200 ${catOpen ? "rotate-180" : ""}`} />
             </button>
             <AnimatePresence>
               {catOpen && (
@@ -185,14 +185,14 @@ export default function Index() {
               )}
             </AnimatePresence>
           </div>
-          <div className="flex-1 flex items-center px-5 gap-3">
-            <div className="flex-1 flex items-center bg-white rounded-lg overflow-hidden max-w-2xl shadow-sm">
-              <Search className="w-4 h-4 text-black/30 ml-3.5 shrink-0" />
+          <div className="flex-1 flex items-center px-2 md:px-5 gap-3 min-w-0">
+            <div className="flex-1 flex items-center bg-white rounded-lg overflow-hidden max-w-2xl shadow-sm min-w-0">
+              <Search className="w-4 h-4 text-black/30 ml-2.5 md:ml-3.5 shrink-0" />
               <input type="text" placeholder="Buscar productos, marcas..." value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="flex-1 px-3 py-3 text-sm text-black outline-none bg-transparent" />
-              <a href="#">
-                <button className="px-6 py-3 text-white text-sm font-bold hover:opacity-90 transition-opacity cursor-pointer"
+                className="flex-1 min-w-0 px-2 md:px-3 py-3 text-sm text-black outline-none bg-transparent" />
+              <a href="#" className="shrink-0">
+                <button className="px-3 md:px-6 py-3 text-white text-sm font-bold hover:opacity-90 transition-opacity cursor-pointer"
                   style={{ background: PINK }}>Buscar</button>
               </a>
             </div>
@@ -247,7 +247,7 @@ export default function Index() {
                 ))}
               </div>
             </a>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { title: "Ofertas Relámpago", sub: "Hasta 33% de descuento", icon: Zap,
                   img: "https://images.unsplash.com/photo-1710553455491-482fa1751dc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" },
@@ -256,12 +256,12 @@ export default function Index() {
               ].map((b) => (
                 <motion.a key={b.title} href="#"
                   initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.4 }}
-                  whileHover={{ y: -3 }} className="relative rounded-xl overflow-hidden cursor-pointer block bg-black" style={{ aspectRatio: "2/1" }}>
+                  whileHover={{ y: -3 }} className="relative rounded-xl overflow-hidden cursor-pointer block bg-black" style={{ aspectRatio: "16/9" }}>
                   <img src={b.img} alt={b.title} className="w-full h-full object-cover opacity-40" />
-                  <div className="absolute inset-0 p-5 flex flex-col justify-between">
+                  <div className="absolute inset-0 p-4 sm:p-5 flex flex-col justify-between">
                     <b.icon className="w-5 h-5 text-white/60" />
                     <div>
-                      <p className="text-white font-black text-lg leading-tight">{b.title}</p>
+                      <p className="text-white font-black text-base sm:text-lg leading-tight">{b.title}</p>
                       <p className="text-white/50 text-xs mt-0.5">{b.sub}</p>
                     </div>
                   </div>
