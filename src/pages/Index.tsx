@@ -395,12 +395,12 @@ export default function Index() {
             <p className="text-white/40 text-sm mt-1">Reciba actualizaciones por correo electrónico sobre ofertas especiales</p>
           </div>
           <div className="flex w-full md:w-auto gap-0 rounded-xl overflow-hidden border border-white/10 max-w-sm md:max-w-none">
-            <div className="flex items-center bg-white/5 flex-1">
+            <div className="flex items-center bg-white/5 flex-1 min-w-0">
               <Mail className="w-4 h-4 text-white/30 ml-4 shrink-0" />
               <input type="email" placeholder="Tu correo electrónico"
-                className="flex-1 px-3 py-3 text-sm text-white bg-transparent outline-none placeholder:text-white/30" />
+                className="flex-1 min-w-0 px-3 py-3 text-sm text-white bg-transparent outline-none placeholder:text-white/30" />
             </div>
-            <button className="text-white text-sm font-black px-6 py-3 shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
+            <button className="text-white text-sm font-black px-4 sm:px-6 py-3 shrink-0 hover:opacity-90 transition-opacity cursor-pointer"
               style={{ background: PINK }}>Registrarse</button>
           </div>
         </div>
