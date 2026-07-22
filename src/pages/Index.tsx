@@ -32,32 +32,32 @@ const brands = [
 const products = [
   {
     name: "Bota Urbano Ferracini", brand: "FERRACINI", price: "₲ 542.000", oldPrice: "",
-    img: "https://images.unsplash.com/photo-1632497775897-815042a13216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=500",
+    img: "/products/1.jpg",
     tag: "Nuevo", isOffer: false,
   },
   {
     name: "Zapatilla Goma Petite Jolie", brand: "PETITE JOLIE", price: "₲ 290.000", oldPrice: "",
-    img: "https://images.unsplash.com/photo-1625860191460-10a66c7384fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=500",
+    img: "/products/2.jpg",
     tag: "Nuevo", isOffer: false,
   },
   {
     name: "Champion Urbano Polo Go", brand: "POLO GO", price: "₲ 159.000", oldPrice: "₲ 238.900",
-    img: "https://images.unsplash.com/photo-1610664676282-55c8de64f746?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=500",
+    img: "/products/3.jpg",
     tag: "33% OFF", isOffer: true,
   },
   {
     name: "Zapato Social Patachoca", brand: "PATACHOCA", price: "₲ 504.000", oldPrice: "",
-    img: "https://images.unsplash.com/photo-1710553455491-482fa1751dc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=500",
+    img: "/products/4.jpg",
     tag: "Top Venta", isOffer: false,
   },
   {
     name: "Bota Comfort Petite Jolie", brand: "PETITE JOLIE", price: "₲ 360.000", oldPrice: "",
-    img: "https://images.unsplash.com/photo-1632497775901-50ba4637399f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=500",
+    img: "/products/5.jpg",
     tag: "Nuevo", isOffer: false,
   },
   {
     name: "Bolso Fem Danna Lu", brand: "DANNA LU", price: "₲ 172.000", oldPrice: "",
-    img: "https://images.unsplash.com/photo-1660599197052-c610e8a15c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=500",
+    img: "/products/6.jpg",
     tag: "Nuevo", isOffer: false,
   },
 ];
