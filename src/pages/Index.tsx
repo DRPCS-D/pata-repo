@@ -163,7 +163,7 @@ export default function Index() {
                 <span className="block w-4 h-[2px] bg-white rounded" />
                 <span className="block w-4 h-[2px] bg-white rounded" />
               </div>
-              <div className="text-left">
+              <div className="text-left hidden sm:block">
                 <p className="text-white font-black text-sm tracking-wide whitespace-nowrap">Categorías</p>
                 <p className="text-white/70 text-[11px] font-normal hidden md:block">Navegue entre más de 20.000 productos</p>
               </div>
