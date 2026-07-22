@@ -439,7 +439,7 @@ export default function Index() {
             </div>
           </div>
           <div className="pt-8 flex flex-col items-center gap-5">
-            <img src="/logo-secundario.png" alt="Patachoca" className="h-[30px] object-contain opacity-70" />
+            <img src="/logo-secundario.png" alt="Patachoca" className="h-[45px] object-contain opacity-70" />
             <div className="flex items-center gap-3">
               <a href="#"
                 className="w-9 h-9 rounded-full border border-black/15 flex items-center justify-center hover:bg-black hover:border-black transition-colors cursor-pointer group">
