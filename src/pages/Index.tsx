@@ -153,7 +153,7 @@ export default function Index() {
 
       {/* COLORED BAR: categories + search */}
       <div style={{ background: BLUE }}>
-        <div className="max-w-7xl mx-auto px-0 md:px-6 py-2 md:py-0 flex items-stretch">
+        <div className="max-w-7xl mx-auto px-0 md:px-6 flex items-stretch">
           <div className="relative shrink-0">
             <button onClick={() => setCatOpen(!catOpen)}
               className="flex items-center gap-2 md:gap-3 px-3 md:px-5 py-3 md:py-4 h-full min-w-0 md:min-w-[220px] cursor-pointer transition-colors"
@@ -185,7 +185,7 @@ export default function Index() {
               )}
             </AnimatePresence>
           </div>
-          <div className="flex-1 flex items-center px-0 md:px-5 gap-3 min-w-0">
+          <div className="flex-1 flex items-stretch md:items-center px-0 md:px-5 gap-3 min-w-0">
             <div className="flex-1 flex items-center bg-white overflow-hidden max-w-2xl shadow-sm min-w-0 rounded-none md:rounded-lg">
               <Search className="w-4 h-4 text-black/30 ml-2.5 md:ml-3.5 shrink-0" />
               <input type="text" placeholder="Buscar productos, marcas..." value={search}
