@@ -314,7 +314,7 @@ export default function Index() {
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             {products.map((p) => (
               <motion.a key={p.name} variants={fadeUp} href="#"
-                whileHover={{ y: -4 }} className="bg-white border border-black/8 rounded-xl overflow-hidden hover:shadow-xl hover:border-black/15 transition-all cursor-pointer group block">
+                whileHover={{ y: -4 }} className="bg-white border border-black/8 rounded-xl overflow-hidden hover:shadow-xl hover:border-black/15 transition-all cursor-pointer group flex flex-col">
                 <div className="relative overflow-hidden bg-[#F2F2F2]" style={{ aspectRatio: "1/1" }}>
                   <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   <span className="absolute top-2.5 left-2.5 text-white text-[10px] font-black px-2.5 py-1 rounded-full tracking-wide"
@@ -323,10 +323,10 @@ export default function Index() {
                     <Heart className="w-3.5 h-3.5 text-black" />
                   </button>
                 </div>
-                <div className="p-3.5">
+                <div className="p-3.5 flex flex-col flex-1">
                   <p className="text-[10px] font-black uppercase tracking-widest text-black/35 mb-1">{p.brand}</p>
                   <p className="text-[13px] font-semibold text-black leading-snug mb-3 line-clamp-2">{p.name}</p>
-                  <div className="flex items-baseline gap-1.5 mb-3">
+                  <div className="flex items-baseline gap-1.5 mb-3 mt-auto">
                     <span className="text-sm font-black text-black">{p.price}</span>
                     {p.oldPrice && <span className="text-[10px] text-black/35 line-through">{p.oldPrice}</span>}
                   </div>
@@ -439,7 +439,7 @@ export default function Index() {
             </div>
           </div>
           <div className="pt-8 flex flex-col items-center gap-5">
-            <img src="/logo-principal.png" alt="Patachoca" className="h-5 object-contain opacity-70" />
+            <img src="/logo-secundario.png" alt="Patachoca" className="h-[30px] object-contain opacity-70" />
             <div className="flex items-center gap-3">
               <a href="#"
                 className="w-9 h-9 rounded-full border border-black/15 flex items-center justify-center hover:bg-black hover:border-black transition-colors cursor-pointer group">
