@@ -214,7 +214,7 @@ export default function Index() {
             </div>
             <div className="rounded-xl overflow-hidden border border-black/8 bg-black text-white p-5 relative">
               <p className="text-white/50 text-[10px] uppercase tracking-widest mb-1">Nueva Colección</p>
-              <p className="font-black text-base leading-tight">Otoño / Invierno<br />2025</p>
+              <p className="font-black text-base leading-tight">Otoño / Invierno<br />2026</p>
               <a href="#">
                 <button className="mt-4 text-black text-xs font-black bg-white px-4 py-2 rounded-full hover:bg-white/90 cursor-pointer transition-colors">Ver todo</button>
               </a>
@@ -348,7 +348,7 @@ export default function Index() {
             <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${PINK}, ${BLUE})` }} />
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-10 md:px-16 py-12 md:py-14 gap-8">
               <div>
-                <p className="text-white/30 text-[10px] uppercase tracking-[0.25em] mb-3">Otoño / Invierno 2025</p>
+                <p className="text-white/30 text-[10px] uppercase tracking-[0.25em] mb-3">Otoño / Invierno 2026</p>
                 <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tight">
                   Nueva colección disponible.<br />
                   <span style={{ color: PINK }}>Más de 20.000 productos.</span>
