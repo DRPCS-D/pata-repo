@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Search, ShoppingCart, Heart, ChevronRight, ChevronDown,
@@ -9,6 +9,16 @@ import {
 const PINK = "#D91571";
 const BLUE = "#008FCA";
 const DARK = "#0A021C";
+
+// ── Hero banner slides (1400x500, rotate in order by filename)
+const heroSlides = [
+  "/hero/1.png",
+  "/hero/2.png",
+  "/hero/3.png",
+  "/hero/4.jpg",
+  "/hero/5.png",
+  "/hero/6.png",
+];
 
 // ── Data
 const categories = ["Mujeres", "Hombres", "Niñas", "Niños", "Deportes & Fitness"];
@@ -73,6 +83,16 @@ export default function Index() {
   const [catOpen, setCatOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const [heroSlide, setHeroSlide] = useState(0);
+  const [heroPaused, setHeroPaused] = useState(false);
+
+  useEffect(() => {
+    if (heroPaused) return;
+    const id = setInterval(() => {
+      setHeroSlide((i) => (i + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(id);
+  }, [heroPaused]);
 
   return (
     <div className="min-h-screen bg-white font-sans text-black antialiased">
@@ -201,26 +221,32 @@ export default function Index() {
             </div>
           </aside>
           <div className="flex-1 flex flex-col gap-4">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}
-              className="relative rounded-xl overflow-hidden bg-black" style={{ aspectRatio: "16/7" }}>
-              <img src="https://images.unsplash.com/photo-1549570652-97324981a6fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1400"
-                alt="Nueva Colección" className="w-full h-full object-cover opacity-60 grayscale" />
-              <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${PINK}, ${BLUE})` }} />
-              <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.5 }}>
-                  <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] mb-2">Nueva Colección · Otoño / Invierno</p>
-                  <h1 className="text-white font-black text-4xl md:text-6xl leading-none tracking-tight mb-5">
-                    Pasarela al<br />
-                    <span style={{ WebkitTextStroke: "2px white", color: "transparent" }}>Mundial</span>
-                  </h1>
-                  <a href="#">
-                    <button className="inline-flex items-center gap-2 bg-white text-black text-sm font-black px-6 py-3 rounded-full hover:bg-white/90 transition-colors cursor-pointer tracking-wide">
-                      Ver colección <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </a>
-                </motion.div>
+            <a href="#" className="relative block rounded-xl overflow-hidden bg-black group" style={{ aspectRatio: "14/5" }}
+              onMouseEnter={() => setHeroPaused(true)} onMouseLeave={() => setHeroPaused(false)}>
+              <div className="absolute left-0 top-0 bottom-0 w-1 z-10" style={{ background: `linear-gradient(to bottom, ${PINK}, ${BLUE})` }} />
+              <AnimatePresence mode="sync">
+                <motion.img
+                  key={heroSlide}
+                  src={heroSlides[heroSlide]}
+                  alt="Patachoca"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={(e) => { e.preventDefault(); setHeroSlide(i); }}
+                    className={`h-1.5 rounded-full transition-all cursor-pointer ${i === heroSlide ? "w-6 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"}`}
+                    aria-label={`Ver slide ${i + 1}`}
+                  />
+                ))}
               </div>
-            </motion.div>
+            </a>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { title: "Ofertas Relámpago", sub: "Hasta 33% de descuento", icon: Zap,
