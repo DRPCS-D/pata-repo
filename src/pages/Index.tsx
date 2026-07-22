@@ -327,7 +327,7 @@ export default function Index() {
                   <p className="text-[10px] font-black uppercase tracking-widest text-black/35 mb-1">{p.brand}</p>
                   <p className="text-[13px] font-semibold text-black leading-snug mb-3 line-clamp-2">{p.name}</p>
                   <div className="flex items-baseline gap-1.5 mb-3 mt-auto">
-                    <span className="text-sm font-black text-black">{p.price}</span>
+                    <span className="text-sm font-black" style={{ color: PINK }}>{p.price}</span>
                     {p.oldPrice && <span className="text-[10px] text-black/35 line-through">{p.oldPrice}</span>}
                   </div>
                   <button className="w-full bg-black text-white text-xs font-bold py-2 rounded-lg hover:bg-black/80 transition-colors cursor-pointer tracking-wide">
